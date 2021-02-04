@@ -56,7 +56,7 @@ namespace BikeRentalSystem
 
         public void DeleteBike(String chasisNumber)
         {
-            Bike bikeToDelete = SearchBikeAlternativt(chasisNumber);
+            Bike bikeToDelete = SearchBike(chasisNumber);
             bikes.Remove(bikeToDelete);
         }
 

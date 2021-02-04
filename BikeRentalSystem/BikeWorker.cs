@@ -11,8 +11,8 @@ namespace BikeRentalSystem
         public void Start()
         {
             Bike b1 = new Bike();
-            Bike b2 = new Bike("herre", 2016, "Rød", "SX345678");
-            Bike b3 = new Bike("barn", 2019, "grøn", "BB123455");
+            Bike b2 = new Bike("Herre", 2016, "Rød", "SX345678");
+            Bike b3 = new Bike("Barn", 2019, "grøn", "BB123455");
 
             Console.WriteLine(b1);
             Console.WriteLine(b2);
@@ -51,6 +51,26 @@ namespace BikeRentalSystem
             EBike eb = new EBike("Herre", 2019, "sort", "bmx678", 300);
             
             bikeCatalog.AddBike(eb);
+            bikeCatalog.PrintBikeList();
+
+
+            Bike bsearch = bikeCatalog.SearchBike("BB123455");
+            Console.WriteLine("BB123455 = " + bsearch);
+            Bike bsearch2 = bikeCatalog.SearchBike("Findes ikke");
+            Console.WriteLine("findes ikke  = " + bsearch2);
+
+            Console.WriteLine("Sletter BB123455");
+            bikeCatalog.DeleteBike("BB123455");
+            bikeCatalog.PrintBikeList();
+
+            Console.WriteLine("søger model 'Herre'");
+            foreach (Bike b in bikeCatalog.SearchBikesOfModel("Herre"))
+            {
+                Console.WriteLine(b);
+            }
+
+            Console.WriteLine("Sletter alle 'Herre'");
+            bikeCatalog.deleteAllBikesOfModel("Herre");
             bikeCatalog.PrintBikeList();
 
         }

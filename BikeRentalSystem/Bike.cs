@@ -39,6 +39,10 @@ namespace BikeRentalSystem
 
         public Bike()
         {
+            _model = "";
+            _yearOfPurchase = 0;
+            _frameColor = "";
+            _chassisNumber = "";
         }
 
         public Bike(string model, int yearOfPurchase, string frameColor, string chassisNumber)
